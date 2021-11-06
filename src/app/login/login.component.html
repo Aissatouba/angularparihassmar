@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="container">
+
+                    <div class="alert alert-danger" *ngIf="erreur ==1">
+                        <strong>login ou mot de passe erronee....</strong>
+                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Nom d'utilisateur</label>
+                            <input type="text" name="username" name="form-control" [(ngModel)]="user.username">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mot de passe</label>
+                            <input type="password" name="password" name="form-control" [(ngModel)]="user.password">
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <button type="button" (click)="onLoggedin()" class="btn btn-success">Connexion</button>
+                        </div>
+                    </form>
+                </div>
+</body>
+
+</html>

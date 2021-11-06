@@ -1,0 +1,15 @@
+# 
+le projet est fait avec json-server donc on doit le lancer avec #  json-server --watch db.json #
+toutes les donnees sont dans le fichier db.json
+
+# j'ai cree 2 utilisateurs"
+-- un ADMIN : USERNAME:admin et PASSWORD = 123 c. Ce dernier peut creer, modifier, lire et supprimer une 
+
+alerte de meme qu'une service et peut voir la liste de sous service;
+
+-- un USER : USERNAME: user et PASSWORD: 123 . Ce dernier peut creer, modifier et supprimer un sous service et aussi voir la liste des sous service 
+
+tous les 2 utilisateurs peuvent voir les operations
+
+Apres avoir lancer le projet il faut mettre le /login pour pouvoir entrer dans l'application
+

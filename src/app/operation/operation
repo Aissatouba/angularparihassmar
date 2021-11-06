@@ -1,0 +1,44 @@
+<div class="container">
+    <!-- <div class="sidebar">
+        <a class="active">Dashboard</a>
+        <a routerLink="/alerte">Alerte</a>
+        <a routerLink="#">Operation</a>
+    </div>
+
+    Page content 
+    <div class="content">
+
+       -->
+
+
+<br>
+<h1 style="padding-left: 50px;">Operation</h1>
+<br>br
+<div class="flexbox">
+    <div class="d-flexbox">
+        <p>Nom Alerte</p>
+        <p><b>Nom Alerte</b></p>
+    </div>
+    <div class="d-flexbox">
+        <p>10 Decembre 2021</p>
+        <p><b>10 Decembre 2021</b></p>
+    </div>
+    <div class="d-flexbox">
+        <i class="bi bi-exclamation-triangle"></i>
+
+        <p>Urgent</p>
+        <p style="color: red;"><b>Urgent</b></p>
+    </div>
+    <div class="d-flexbox">
+        <p>Destinataire</p>
+        <p> <b>Hassmar</b> </p>
+        <p><b>Direction des Douanes</b></p>
+        <p><b>Police Nationale</b></p>
+        <p><b>Police Nationale</b></p>
+    </div>
+    <div class="d-flexbox">
+        <p>Position</p>
+        <p><b>Latitude 14.681º</b></p>
+        <p><b>Longitude 14.681º</b></p>
+    </div>
+</div>

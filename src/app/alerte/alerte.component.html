@@ -1,0 +1,230 @@
+<div class="container">
+        <br>
+        <div class="flexbox">
+            <div class="blog1">
+                <div class="flexbox_contenue" style="width: 15rem">
+                    <h4>HASSMAR</h4>
+                    <div class="p">
+                        <p class="text-info"><b>20</b></p>
+                    </div>
+                </div>
+                <div class="flexbox_contenue" style="width:15rem">
+                    <h4>POLICE NATIONALE</h4>
+                    <div class="p">
+                        <p class="text-info"><b>20</b></p>
+                    </div>
+                </div>
+                <div class="flexbox_contenue" style="width:15rem">
+                    <h4>DIRECTION DES DOUANES</h4>
+                    <div class="p">
+                        <p class="text-info"><b>20</b></p>
+                    </div>
+                </div>
+                <div class="flexbox_contenue" style="width:15rem">
+                    <h4>MINISTRE DE L'INTERIEUR </h4>
+                    <div class="p">
+                        <p class="text-info"><b>20</b></p>
+                    </div>
+                </div>
+                <div class="flexbox_contenue" style="width:15rem">
+                    <h4>PORT AUTONOME </h4>
+                    <div class="p">
+                        <p class="text-info"><b>20</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="blog2">
+                <div class="button-gauche">
+                    <div class="group-boutton">
+                        <div class="btn1"><button class="btn btn-danger mb-2">Pas encore envoyer</button></div>
+                        <div class="btn1"><button class="btn btn-warning mb-2">En cours</button></div>
+                        <div class="btn1"><button class="btn btn-success mb-2">Recus</button></div>
+                    </div>
+                    <div class="nombre-gauche">
+                        <div class="nombre nombre-p">
+                            <p class=" text-danger mb-3 border-danger"><b>15</b></p>
+                        </div>
+                        <div class="nombre">
+                            <p class=" text-warning mb-3"><b>15</b></p>
+                        </div>
+                        <div class="nombre">
+                            <p class="text-success mb-3"><b>15</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex">
+            <button type="button" (click)='clickAddAlerte()' class="btn btn-success" data-bs-toggle="modal" *ngIf="authService.isAdmin()"
+                data-bs-target="#exampleModal">
+                Nouvelle Alerte
+            </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <table class="table " >
+            <thead >
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">intitule</th>
+                    <th scope="col">Niveau </th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Createur</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
+                    <th scope="col">Destinataire(s)</th>
+                    <th scope="col" *ngIf="authService.isAdmin()">ACTION</th>
+
+                </tr>
+            
+            <tbody>
+                <tr *ngFor= "let row of alerteData">
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.intitule }} </td>
+                    <td>{{ row.niveaualerte }}</td>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.creerpar}}</td>
+                    <td>{{row.Description}}</td>
+                    <td>{{row.Latitude}}</td>
+                    <td>{{row.Longitude}}</td>
+                    <td>{{row.Destinataire}}</td>
+
+                    <td> 
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            (click)="onEdit(row)"  *ngIf="authService.isAdmin()">EDITER</button>&nbsp;
+                        <button (click)="deleteAlerte(row)" class="btn btn-danger"  *ngIf="authService.isAdmin()">SUPPRIMER</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title" id="exampleModalLabel" style="color: white;">Nouvelle Alerte</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]='formValue'>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="exampleInputintituleEmail1" class="form-label">Intitule </label>
+                                    <input type="text" class="form-control" id="exampleInputintitule1"
+                                        aria-describedby="intituleHelp" formControlName="intitule">
+                                </div>
+                                <div class="col-6">
+                                    <label for="exampleInputtext1" class="form-label">Niveau
+                                        Alerte</label>
+                                    <input type="text" class="form-control" id="exampleInputtext1"
+                                        formControlName="niveaualerte">
+                                </div>
+
+                            </div>
+                            
+                                <div class="col-15">
+                                    <label for="exampleInputtext1" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="exampleInputtext1"
+                                        formControlName="date">
+                                </div>
+                                
+                                <label for="exampleInputtext1" class="form-label">Creer par</label>
+
+                                <div class="col-auto">
+                                    <select class="form-select" aria-label="Default select example"
+                                        formControlName="creerpar">
+                                        <option>Police </option>
+                                        <option>HASSMAR</option>
+                                        <option> Douanes</option>
+                                        <option>Marine </option>
+                                    </select>
+                                </div>
+
+                            
+                            <div class="row g-3 align-items-center m-3">
+                                <div class="col-auto">
+                                    <label for="inputPassword6" class="col-form-label">Description</label>
+                                
+                                    <textarea formControlName="Description" name="" id="" cols="40"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+
+                           
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="inputPassword6" class="col-form-label">latitude</label>
+                                    <input type="number" formControlName="Latitude" id="inputPassword6"
+                                        class="form-control" aria-describedby="text">
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="inputPassword6" class="col-form-label">longitude</label>
+                                
+                                    <input type="number" formControlName="Longitude" id="inputPassword6"
+                                        class="form-control" aria-describedby="">
+                                </div>
+                            </div>
+
+                            <div class="row g-3 align-items-center m-3">
+                                <div class="col-auto">
+                                    <label for="inputPassword6" class="col-form-label">Destinataire</label>
+                                <!---<div class="col-auto">
+                                    <div class="form-check form-switch">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault"
+                                            formControlName="Destinataire">Ministre de l'interieur</label>
+                                        <input class="form-check-input" type="checkbox" formControlName="Destinataire"
+                                            role="switch" id="flexSwitchCheckDefault">
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" formControlName="Destinataire"
+                                            role="switch" id="flexSwitchCheckChecked" checked>
+                                        <label class="form-check-label bold" for="flexSwitchCheckChecked"
+                                            formControlName="Destinataire">Direction des Douanes</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" formControlName="Destinataire"
+                                            role="switch" id="flexSwitchCheckChecked" checked>
+                                        <label class="form-check-label bold" for="flexSwitchCheckChecked"
+                                            formControlName="Destinataire">Police National</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" formControlName="Destinataire"
+                                            role="switch" id="flexSwitchCheckChecked" checked>
+                                        <label class="form-check-label bold" for="flexSwitchCheckChecked"
+                                            formControlName="Destinataire">Marine National</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" formControlName="Destinataire"
+                                            role="switch" id="flexSwitchCheckChecked" checked>
+                                        <label class="form-check-label bold" for="flexSwitchCheckChecked">Port Autonome
+                                            de Dakar</label>
+                                    </div>
+                                </div>-->
+                                    <select class="form-select" aria-label="Default select example"
+                                        formControlName="Destinataire">
+                                        <option>Police </option>
+                                        <option>HASSMAR</option>
+                                        <option> Douanes</option>
+                                        <option>Marine </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" *ngIf= 'showAdd' (click)= 'postAlertDetails()'
+                            class="btn btn-primary">Ajouer +</button>
+                        <button type="button" class="btn btn-secondary" id="cancel"
+                            data-bs-dismiss="modal">Fermer</button>
+                        <button type="button" *ngIf= 'showUpdate' (click)= 'updateAlerteDetail()'
+                            class="btn btn-primary">Modifier</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,104 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "intitule": "alerte 1",
+      "niveaualerte": "critique",
+      "date": "2021-11-04",
+      "creerpar": "Douanes",
+      "Description": "traquique de drogue",
+      "Latitude": 12,
+      "Longitude": 112,
+      "Destinataire": "Police"
+    },
+    {
+      "id": 2,
+      "intitule": "alerte 2",
+      "niveaualerte": "moyen",
+      "date": "2021-11-06",
+      "creerpar": "HASSMAR",
+      "Description": "chavirement",
+      "Latitude": 1,
+      "Longitude": 2,
+      "Destinataire": "HASSMAR"
+    },
+    {
+      "id": 3,
+      "intitule": "Intitule 3",
+      "niveaualerte": "mineur",
+      "date": "2021-11-07",
+      "creerpar": "Police",
+      "Description": "pollution marine",
+      "Latitude": -1,
+      "Longitude": 1,
+      "Destinataire": "HASSMAR"
+    }
+  ],
+  "service": [
+    {
+      "id": 2,
+      "nom": "Police",
+      "date": "2021-11-06",
+      "creerpar": "Hassmar"
+    },
+    {
+      "id": 3,
+      "nom": "Douane",
+      "date": "2021-11-07",
+      "creerpar": "Hassmar"
+    },
+    {
+      "id": 4,
+      "nom": "MARINE",
+      "date": "2021-11-14",
+      "creerpar": "hassmar"
+    },
+    {
+      "id": 5,
+      "nom": "MARINE",
+      "date": "2021-11-14",
+      "creerpar": "hassmar"
+    },
+    {
+      "id": 6,
+      "nom": "Sapeur pompier",
+      "date": "2021-11-14",
+      "creerpar": "hassmar"
+    }
+  ],
+  "sous": [
+    {
+      "id": 1,
+      "nom": "DIC",
+      "services": "Police",
+      "date": "2021-11-14",
+      "creerpar": "Police"
+    }, 
+    {
+      "id": 2,
+      "nom": "dic",
+      "services": "Police",
+      "date": "2021-11-14",
+      "creerpar": "Douane"
+    },
+     {
+      "id": 3,
+      "nom": "DIC",
+      "services": "Police",
+      "date": "2021-11-14",
+      "creerpar": "Marine"
+    }
+  ],
+  "operation": [
+    {}
+  ],
+  "userop": [
+    {
+      "nom": "",
+      "service": ""
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,74 @@
+
+<div class="d-flex">
+    <button type="button" (click)='clickAddSous()' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="authService.isChef()">
+        Nouvelle Sous-Service
+    </button>
+</div>
+<br>
+<table class="table table-hover ">
+    <thead class='thead-bordered'>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOM</th>
+            <th scope="col">SERVICE</th>
+            <th scope="col">DATE</th>
+            <th scope="col">CREER PAR</th>
+            <th scope="col" *ngIf="authService.isChef()">ACTION</th>
+
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor = "let col of SousData">
+            <td>{{ col.id }}</td>
+            <td>{{ col.nom }} </td>
+
+            <td>{{ col.services }}</td>
+           <td>{{ col.date }}</td>
+           <td>{{ col.creerpar}}</td>
+            <td>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit(col)" *ngIf="authService.isUser()">EDITER</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  (click)="deleteSous(col)" class="btn btn-danger" *ngIf="authService.isChef()">SUPPRIMER</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title" id="exampleModalLabel" style="color: aliceblue;" >Nouvelle Sous Serve</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]='formValue'>
+                    <div class="col-12">
+                        <label for="exampleInputintituleEmail1" class="form-label">Nom </label>
+                        <input type="text" class="form-control" id="exampleInputintitule1"
+                            aria-describedby="intituleHelp" formControlName="nom">
+                    </div>
+                        <div class="col-12">
+                            <label for="exampleInputtext1"  class="form-label">Service</label>
+                            <input type="text" class="form-control" id="exampleInputtext1" formControlName="services">
+                        </div>
+                        <div class="col-12">
+                            <label for="exampleInputtext1"  class="form-label">Date</label>
+                            <input type="date" class="form-control" id="exampleInputtext1" formControlName="date">
+                        </div>
+                        <div class="col-12">
+                            <label for="exampleInputtext1" 
+                                class="form-label">Creer_par</label>
+                            <input type="text" class="form-control" id="exampleInputtext1" formControlName="creerpar">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" *ngIf = 'showAddSous' (click)='postSousDetails()' class="btn btn-primary">Ajouer +</button>
+                <button type="button" *ngIf = 'showUpdateSous' (click)='updateSousDetail()' class="btn btn-primary">Modifier</button>
+                <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Fermer</button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-md-12 text-center">
+            <div class="flexbox">
+                <div class="d-flexbox">
+                    <p>Nom Alerte</p>
+                    <p><b>Nom Alerte</b></p>
+                </div>
+                <div class="d-flexbox">
+                    <p>10 Decembre 2021</p>
+                    <p><b>10 Decembre 2021</b></p>
+                </div>
+                <div class="d-flexbox">
+                    <i class="bi bi-exclamation-triangle"></i>
+            
+                    <p>Urgent</p>
+                    <p style="color: red;"><b>Urgent</b></p>
+                </div>
+                <div class="d-flexbox">
+                    <p>Destinataire</p>
+                    <p> <b>Hassmar</b> </p>
+                    <p><b>Direction des Douanes</b></p>
+                    <p><b>Police Nationale</b></p>
+                    <p><b>Police Nationale</b></p>
+                </div>
+                <div class="d-flexbox">
+                    <p>Position</p>
+                    <p><b>Latitude 14.681º</b></p>
+                    <p><b>Longitude 14.681º</b></p>
+                </div>
+
+            <!-- column -->
+    </div>
+  </div>
+  <br>
+  <br> 
+ 
+  
+<div class="operation">
+    <div class="action">
+        <div class="header">
+            <h4>Actions</h4>
+        </div>
+        <p><b>Intitule Operation </b>12 Decembre 2020</p>
+        <hr>
+
+        <div class="chat">
+            <div class="date">
+                date
+            </div>
+            <span class="vertical"></span>
+
+            <div class="texte">
+                chat
+            </div>
+        </div>
+
+
+        <form action="" class="form">
+            
+            <label for="">Actions</label>
+            <input type="text" style="height:75px; width:  50%;" required>
+            <br>
+            <br>
+            <input type="file">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-info" id="envoyer">Envoyer</button>
+        </form>
+    </div>
+    <div class="liste">
+        <div class="header">
+            <h4>Liste des participants</h4>
+            <i class="far fa-circle nav-icon"></i>
+JKSD
+        </div>
+        <br>
+
+        <div class="d-flex">
+            <button type="button" (click)='clickAddUser()' class="btn btn-info" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Nouvelle Invitation
+            </button>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title" id="exampleModalLabel" style="color: white;">
+                            Nouvelle Alerte</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="">Nom d'utilisateur</label>
+                                <input type="text" name="nom" name="form-control" formControlName="nom">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="">service</label>
+                                <input type="text" name="text" name="form-control" formControlName="service">
+                            </div>
+
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" (click)='postUserDetails()' class="btn btn-primary">Ajouer +</button>
+                            <button type="button" class="btn btn-secondary" id="cancel"
+                                data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+
+
+header{
+    background-color: rgb(205, 218, 216);
+    height: 40px;
+}
+header h4{
+    padding-left: 30px;
+}
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    border: solid .5px black;
+    height: 175px;
+    line-height: 50%;
+    margin-left: 50px;
+    margin-right: 30px;
+    
+}
+
+.operation{
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.d-flexbox{
+    margin-left: 100px;
+    line-height: 20px;
+}
+.d-flexbox p{
+    font-family: 'Arial';
+    font-size: 16px;
+}
+.action{
+    border: black 1px solid;
+    height: 625px;
+    width: 70%;
+    float: left;
+    margin-left: 0px;
+
+}
+.liste{
+    width: 23%;
+    border: 1px solid black;
+    float: right;
+    height: 250px;
+    margin-right: 62px;
+
+}
+.header{
+    background-color: black;
+    height: 27px;
+    color: white;
+}
+.header h4,p{
+    font-size: 14px;
+    padding-left: 20px;
+
+}
+.form{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+input[type=file]{
+    margin-left: 50px;
+
+
+}
+input[type=file], input[type=text]{
+    display: inline-block;
+
+}
+#envoyer{
+    float: center;
+    margin-left: 25%;
+
+
+}
+.row{
+    margin-left: 40px;
+    margin-right: 30px;
+}
+.btn{
+    color: white;
+}
+.vertical{
+    border-left: 2px solid gray;
+    height: 200px;
+    display: inline-block;
+    margin-left: 50px;
+}
+.date{
+    width: 20%;
+    margin-left: 15px;
+    float: left;
+}
+.texte{
+    float: right;
+    width: 68%;
+
+}

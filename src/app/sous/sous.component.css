@@ -1,0 +1,13 @@
+.d-flex
+{float: inline-end;
+  float: right;
+  margin-right: 10px;
+}
+table{
+    padding-left: 150px;
+    margin-left: 60px;
+  font-family: 'Arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 50px;
+  }

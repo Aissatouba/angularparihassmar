@@ -1,0 +1,18 @@
+.d-flex
+{float: inline-end;
+  float: right;
+  margin-right: 10px;
+}
+table{
+    width: 100%;
+    padding-left: 150px;
+    margin-left: 60px;
+  font-family: 'Arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+  }
+  label{
+    font-family: 'Arial';
+    font-size: 14px;
+  }

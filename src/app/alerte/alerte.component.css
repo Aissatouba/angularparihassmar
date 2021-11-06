@@ -1,0 +1,88 @@
+.container{
+    width: 100%;
+    margin-left: 0;
+  margin-right: 0;}
+
+.d-flex
+{
+margin-left: 20px;}
+.flexbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.blog1{
+    display: flex;
+    flex-direction: row;
+}
+
+
+label{
+    font-family: 'Arial';
+    font-size: 14px;
+  }
+.flexbox_contenue {
+    border: solid .5px rgb(0, 0, 0);
+    height: 20vh;
+    margin-right: 15px;
+   margin-left: 15px;
+   text-align: center;
+}
+
+.button-gauche {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.nombre-gauche {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    margin-left: 10px;
+}
+
+.nombre {
+    border: black solid 1px;
+margin-bottom: 15px;
+width: 40px;
+height: 60vh;
+}
+
+.btn1 button {
+    
+    width: 30vh;
+    height: 6vh;
+}
+table{
+    margin-left: 150px;
+}
+.nombre p {
+   height: 25px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    
+}
+thead th{
+    font-size: 20px;
+    width: 100%;
+    padding-left: 50px;
+}
+tbody td{
+    font-size: 20px;
+}
+
+.flexbox_contenue h4 {
+    font-size: 15px;
+    background-color: gray;
+    color: white;
+
+}
+
+.p p{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
